@@ -40,13 +40,16 @@ h1 {
   opacity: 0.6;
 }
 
+/* LINKS */
+
 .link-section {
   position: relative;
-  min-height: 15vh;
-  margin-bottom: 6vh;
+  min-height: 22vh;
+  margin-bottom: 7vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .link {
@@ -63,27 +66,40 @@ h1 {
 }
 
 .glass {
-  background: rgba(255,255,255,0.4);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(14px);
   border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
-/* TORO PNG */
+/* TORO */
+
 .toro {
   position: absolute;
-  width: 35vw;
-  max-width: 180px;
+  top: 0;
+  width: 28vw;
+  max-width: 120px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+
   opacity: 0;
-  transform: translateX(-30%);
-  transition: all 0.8s ease;
+  transition: all 1.2s ease;
 }
 
-.toro-left {
-  left: -10%;
+
+/* izquierda */
+.link-section.left .toro {
+  left: 5%;
+  transform: translateX(-40%);
 }
 
-/* ACTIVADO CON SCROLL */
+/* derecha */
+.link-section.right .toro {
+  right: 5%;
+  transform: translateX(40%);
+}
+
+/* visible */
 .link-section.visible .toro {
   opacity: 1;
   transform: translateX(0);
